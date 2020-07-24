@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <!-- Basic settings -->
+    <PropertyGroup>
+        <MajorVersionNumber                    Condition="'$(MajorVersionNumber)'==''">2019</MajorVersionNumber>
+        <MinorVersionNumber                    Condition="'$(MinorVersionNumber)'==''">0</MinorVersionNumber>
+        <BuildNumber                           Condition="'$(BuildNumber)'==''">0</BuildNumber>
+        <RevisionNumber                        Condition="'$(RevisionNumber)'==''">0</RevisionNumber>
+        <Platform                              Condition="'$(Platform)'==''">AnyCPU</Platform>
+        <Configuration                              Condition="'$(Configuration)'==''">Release</Configuration>
+        
+        
+        <!-- TSVersion is used for specifying folders. Change when branching. -->
+        <TSVersion              Condition="'$(TSVersion)'==''">2019</TSVersion>
+        <!-- Main Versions Numbers For Tekla Structures -->
+        <TSVersionNumber>$(MajorVersionNumber).$(MinorVersionNumber).$(BuildNumber).$(RevisionNumber)</TSVersionNumber>
+
+        
+        <BINDir  Condition="'$(BINDir)'==''">$(MSBuildThisFileDirectory)..\..\..\BuildDrop\$(Platform)\$(Configuration)</BINDir>
+        <OBJDir>$(MSBuildThisFileDirectory)..\..\..\ObjDir\$(TSVersion)\</OBJDir>
+        <IntermediateOutputPath>$(OBJDir)$(MSBuildProjectName)\</IntermediateOutputPath>
+        <ApplicationIcon>$(MSBuildThisFileDirectory)..\TeklaStructuresExtension.ico</ApplicationIcon>
+    </PropertyGroup>
+</Project>

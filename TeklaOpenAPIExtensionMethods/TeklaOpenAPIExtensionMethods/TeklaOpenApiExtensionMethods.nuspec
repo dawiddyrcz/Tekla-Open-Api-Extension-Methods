@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>TeklaOpenApiExtensionMethods</id>
+    <version>1.0.7</version>
+    <title>TeklaOpenApiExtensionMethods</title>
+    <authors>Dawid Dyrcz</authors>
+    <owners>Dawid Dyrcz</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>http://github.com/</projectUrl>
+    <icon>images\icon.png</icon>
+    <description>This package contains extension methods to the Tekla Structures Open Api assemblies i.e methods ModelObjectEnumerator.ToList()</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright Dawid Dyrcz 2020</copyright>
+    <tags>Tekla Structures Open Api Extension Methods</tags>
+	<dependencies>
+      <group targetFramework="net40" />
+</dependencies>
+  </metadata>
+  
+  <files>
+    <file src="images\icon.png" target="images\" />
+    <file src="Model\*.cs" target="content/TeklaApiExtensions/Model" />
+    <file src="Drawing\*.cs" target="content/TeklaApiExtensions/Drawing" />
+    <file src="Geometry3d\*.cs" target="content/TeklaApiExtensions/Geometry3d" />
+  </files>
+</package>
