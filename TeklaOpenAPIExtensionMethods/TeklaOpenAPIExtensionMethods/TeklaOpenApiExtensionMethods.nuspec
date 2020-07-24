@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>TeklaOpenApiExtensionMethods</id>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <title>TeklaOpenApiExtensionMethods</title>
     <authors>Dawid Dyrcz</authors>
     <owners>Dawid Dyrcz</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>http://github.com/</projectUrl>
+    <projectUrl>https://github.com/dawiddyrcz/Tekla-Open-Api-Extension-Methods</projectUrl>
     <icon>images\icon.png</icon>
     <description>This package contains extension methods to the Tekla Structures Open Api assemblies i.e methods ModelObjectEnumerator.ToList()</description>
     <releaseNotes></releaseNotes>
