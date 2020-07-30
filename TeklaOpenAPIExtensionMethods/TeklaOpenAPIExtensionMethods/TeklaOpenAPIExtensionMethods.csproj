@@ -88,6 +88,7 @@
     <Compile Include="Geometry3d\MatrixExtensions.cs" />
     <Compile Include="Geometry3d\VectorExtensions.cs" />
     <Compile Include="Geometry3d\UnitVector.cs" />
+    <Compile Include="Model\AssemblyExtensions.cs" />
     <Compile Include="Model\ModelObjectEnumeratorExtensions.cs" />
     <Compile Include="Model\ModelObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
