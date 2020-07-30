@@ -94,7 +94,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="copyNuget.bat" />
     <None Include="createNuget.bat" />
     <None Include="packages.config" />
     <None Include="TeklaOpenApiExtensionMethods.nuspec">
