@@ -1,6 +1,6 @@
 ﻿using Tekla.Structures.Geometry3d;
 
-namespace TeklaOpenAPIExtension.Geometry3d
+namespace TeklaOpenAPIExtension
 {
     public static class MatrixExtensions
     {
