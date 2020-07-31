@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Tekla.Structures.Drawing;
 
 namespace TeklaOpenAPIExtension
 {
     public static class DrawingEnumeratorExtension
     {
+        /// <summary>Add items from the enumerator to the System.Collections.Generic.List</summary>
         public static List<Drawing> ToList(this DrawingEnumerator enumerator)
         {
             var output = new List<Drawing>(enumerator.GetSize());
@@ -21,6 +18,7 @@ namespace TeklaOpenAPIExtension
             return output;
         }
 
+        /// <summary>Add items from the enumerator to the System.Collections.Generic.List. if (enumerator.Current is T t) output.Add(t);</summary>
         public static List<T> ToList<T>(this DrawingEnumerator enumerator) where T : Drawing
         {
             var output = new List<T>(enumerator.GetSize());
