@@ -24,5 +24,6 @@
     <file src="Model\*.cs" target="content/TeklaApiExtensions/Model" />
     <file src="Drawing\*.cs" target="content/TeklaApiExtensions/Drawing" />
     <file src="Geometry3d\*.cs" target="content/TeklaApiExtensions/Geometry3d" />
+    <file src="Readme.md" target="content/TeklaApiExtensions" />
   </files>
 </package>
