@@ -85,6 +85,43 @@ namespace TeklaOpenAPIExtension
             output.Y += viewBase.Height;
             return output;
         }
+
+        /// <summary>Return list of model objects presented in view</summary>
+        public static List<Tekla.Structures.Model.ModelObject> GetModelObjects(this ViewBase viewBase)
+        {
+            var drawingParts = viewBase.GetObjects<Tekla.Structures.Drawing.Part>();
+            var output = new List<Tekla.Structures.Model.ModelObject>(drawingParts.Count);
+            var model = new Tekla.Structures.Model.Model();
+
+            for (int i = 0; i < drawingParts.Count; i++)
+            {
+                var identifier = drawingParts[0].ModelIdentifier;
+                var modelObject = model.SelectModelObject(identifier);
+
+                if (modelObject != null)
+                    output.Add(modelObject);
+            }
+
+            return output;
+        }
+        /// <summary>Return list of model parts presented in view</summary>
+        public static List<Tekla.Structures.Model.Part> GetModelParts(this ViewBase viewBase)
+        {
+            var drawingParts = viewBase.GetObjects<Tekla.Structures.Drawing.Part>();
+            var output = new List<Tekla.Structures.Model.Part>(drawingParts.Count);
+            var model = new Tekla.Structures.Model.Model();
+
+            for (int i = 0; i < drawingParts.Count; i++)
+            {
+                var identifier = drawingParts[0].ModelIdentifier;
+                var modelObject = model.SelectModelObject(identifier);
+
+                if (modelObject != null && modelObject is Tekla.Structures.Model.Part part)
+                    output.Add(part);
+            }
+
+            return output;
+        }
     }
 }
 #endif
