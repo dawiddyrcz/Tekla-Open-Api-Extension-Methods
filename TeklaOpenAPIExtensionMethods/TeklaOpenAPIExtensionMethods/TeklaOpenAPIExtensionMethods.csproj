@@ -10,11 +10,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TeklaOpenAPIExtension</RootNamespace>
     <AssemblyName>TeklaOpenAPIExtensionMethods</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,15 +81,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drawing\DrawingExtensions.cs" />
+    <Compile Include="Drawing\DrawingObjectExtensions.cs" />
+    <Compile Include="Drawing\DrawingObjectSelectorExtensions.cs" />
     <Compile Include="Drawing\ViewBaseExtension.cs" />
     <Compile Include="Drawing\DrawingEnumeratorExtension.cs" />
     <Compile Include="Drawing\DrawingObjectEnumeratorExtension.cs" />
     <Compile Include="Geometry3d\CoordinateSystemExtensions.cs" />
     <Compile Include="Geometry3d\Intersection2.cs" />
     <Compile Include="Geometry3d\MatrixExtensions.cs" />
+    <Compile Include="Geometry3d\PointExtension.cs" />
     <Compile Include="Geometry3d\VectorExtensions.cs" />
     <Compile Include="Geometry3d\UnitVector.cs" />
     <Compile Include="Model\AssemblyExtensions.cs" />
+    <Compile Include="Model\ContourExtension.cs" />
+    <Compile Include="Model\ModelExtensions.cs" />
+    <Compile Include="Model\ModelInfoExtensions.cs" />
     <Compile Include="Model\ModelObjectEnumeratorExtensions.cs" />
     <Compile Include="Model\ModelObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

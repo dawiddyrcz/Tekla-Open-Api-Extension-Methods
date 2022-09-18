@@ -9,12 +9,13 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>TestProject</RootNamespace>
     <AssemblyName>TestProject</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -85,8 +86,17 @@
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingEnumeratorExtension.cs">
       <Link>references\DrawingEnumeratorExtension.cs</Link>
     </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingExtensions.cs">
+      <Link>references\DrawingExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingObjectEnumeratorExtension.cs">
       <Link>references\DrawingObjectEnumeratorExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingObjectExtensions.cs">
+      <Link>references\DrawingObjectExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingObjectSelectorExtensions.cs">
+      <Link>references\DrawingObjectSelectorExtensions.cs</Link>
     </Compile>
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\ViewBaseExtension.cs">
       <Link>references\ViewBaseExtension.cs</Link>
