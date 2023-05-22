@@ -89,6 +89,7 @@
     <Compile Include="Drawing\ViewBaseExtension.cs" />
     <Compile Include="Drawing\DrawingEnumeratorExtension.cs" />
     <Compile Include="Drawing\DrawingObjectEnumeratorExtension.cs" />
+    <Compile Include="Drawing\ViewExtensions.cs" />
     <Compile Include="Geometry3d\CoordinateSystemExtensions.cs" />
     <Compile Include="Geometry3d\Intersection2.cs" />
     <Compile Include="Geometry3d\MatrixExtensions.cs" />
