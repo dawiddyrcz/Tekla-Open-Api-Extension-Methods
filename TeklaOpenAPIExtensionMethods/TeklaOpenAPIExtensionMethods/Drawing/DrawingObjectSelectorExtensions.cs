@@ -39,7 +39,18 @@ using Tekla.Structures.Drawing.UI;
 namespace TeklaOpenAPIExtension
 {
     public static class DrawingObjectSelectorExtensions
-    {
+	{
+		/// <summary>
+		/// Gets the selected objects in the drawing of type <typeparamref name="TDrawingObject"/>.
+		/// </summary>
+		/// <typeparam name="TDrawingObject">Type of returned drawing objects.</typeparam>
+		/// <param name="selector">Selector to find drawing objects.</param>
+		/// <returns>A <see cref="IReadOnlyCollection{TDrawingObject}"/> of the selected objects in the drawing.</returns>
+		public static IReadOnlyCollection<TDrawingObject> GetSelected<TDrawingObject>(this DrawingObjectSelector selector) where TDrawingObject : DrawingObject
+	    {
+		    return selector.GetSelected().ToReadOnlyCollection<TDrawingObject>();
+	    }
+
         public static void SelectObjects(this DrawingObjectSelector selector, IEnumerable<DrawingObject> drawingObjects, bool extendSelection = false)
         {
             var arList = new ArrayList(drawingObjects.Count());
