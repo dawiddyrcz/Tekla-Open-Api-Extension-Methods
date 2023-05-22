@@ -86,6 +86,9 @@
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Collections\IEnumeratorExtensions.cs">
       <Link>references\IEnumeratorExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\ContainerViewExtensions.cs">
+      <Link>references\ContainerViewExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingEnumeratorExtension.cs">
       <Link>references\DrawingEnumeratorExtension.cs</Link>
     </Compile>
