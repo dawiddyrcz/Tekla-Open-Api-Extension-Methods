@@ -140,6 +140,9 @@
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Model\ModelObjectSelectorExtensions.cs">
       <Link>references\ModelObjectSelectorExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Model\UI\ModelObjectSelectorExtensions.cs">
+      <Link>references\Model\UI\ModelObjectSelectorExtensions.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -147,6 +150,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
