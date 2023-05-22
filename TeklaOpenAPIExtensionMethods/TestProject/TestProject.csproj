@@ -104,6 +104,9 @@
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingObjectSelectorExtensions.cs">
       <Link>references\DrawingObjectSelectorExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingSelectorExtensions.cs">
+      <Link>references\DrawingSelectorExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\ViewBaseExtension.cs">
       <Link>references\ViewBaseExtension.cs</Link>
     </Compile>
