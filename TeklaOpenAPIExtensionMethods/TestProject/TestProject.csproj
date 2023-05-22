@@ -107,6 +107,9 @@
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\ViewBaseExtension.cs">
       <Link>references\ViewBaseExtension.cs</Link>
     </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\ViewExtensions.cs">
+      <Link>references\ViewExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Geometry3d\CoordinateSystemExtensions.cs">
       <Link>references\CoordinateSystemExtensions.cs</Link>
     </Compile>
