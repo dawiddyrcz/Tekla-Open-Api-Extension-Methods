@@ -81,6 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\IEnumeratorExtensions.cs" />
     <Compile Include="Drawing\DrawingExtensions.cs" />
     <Compile Include="Drawing\DrawingObjectExtensions.cs" />
     <Compile Include="Drawing\DrawingObjectSelectorExtensions.cs" />
