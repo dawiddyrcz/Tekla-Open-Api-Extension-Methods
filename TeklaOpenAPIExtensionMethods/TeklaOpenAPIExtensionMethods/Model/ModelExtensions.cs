@@ -28,6 +28,8 @@ open properties of your project, goto Build > Conditional compilation symbols an
 With NOT_TSD symbol the code bellow will not be included in your project
 */
 
+using System;
+using ts = Tekla.Structures;
 using tsm = Tekla.Structures.Model;
 
 namespace TeklaOpenAPIExtension
@@ -38,9 +40,33 @@ namespace TeklaOpenAPIExtension
         {
             return model.GetInfo().ModelPath;
         }
+
         public static string AttributesPath(this tsm.Model model)
         {
             return System.IO.Path.Combine(model.GetInfo().ModelPath, "attributes");
         }
-    }
+
+        public static TModelObject Select<TModelObject>(this tsm.Model model, ts.Identifier identifier) where TModelObject : tsm.ModelObject
+        {
+            return model.SelectModelObject(identifier) as TModelObject;
+        }
+
+        public static bool TrySelect<TModelObject>(this tsm.Model model, ts.Identifier identifier, out TModelObject modelObject) where TModelObject : tsm.ModelObject
+        {
+	        modelObject = model.Select<TModelObject>(identifier);
+	        return modelObject != null;
+        }
+
+        public static TModelObject Select<TModelObject>(this tsm.Model model, Guid guid) where TModelObject : tsm.ModelObject
+        {
+	        var identifier = model.GetIdentifierByGUID(guid.ToString());
+	        return model.SelectModelObject(identifier) as TModelObject;
+        }
+
+        public static bool TrySelect<TModelObject>(this tsm.Model model, Guid guid, out TModelObject modelObject) where TModelObject : tsm.ModelObject
+        {
+	        modelObject = model.Select<TModelObject>(guid);
+	        return modelObject != null;
+        }
+	}
 }
