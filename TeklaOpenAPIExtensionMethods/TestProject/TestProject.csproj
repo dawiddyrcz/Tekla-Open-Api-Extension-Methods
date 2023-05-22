@@ -137,6 +137,9 @@
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Model\ModelObjectExtensions.cs">
       <Link>references\ModelObjectExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Model\ModelObjectSelectorExtensions.cs">
+      <Link>references\ModelObjectSelectorExtensions.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
