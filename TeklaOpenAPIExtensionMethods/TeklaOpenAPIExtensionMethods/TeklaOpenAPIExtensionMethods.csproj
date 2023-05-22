@@ -103,6 +103,7 @@
     <Compile Include="Model\ModelInfoExtensions.cs" />
     <Compile Include="Model\ModelObjectEnumeratorExtensions.cs" />
     <Compile Include="Model\ModelObjectExtensions.cs" />
+    <Compile Include="Model\ModelObjectSelectorExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
