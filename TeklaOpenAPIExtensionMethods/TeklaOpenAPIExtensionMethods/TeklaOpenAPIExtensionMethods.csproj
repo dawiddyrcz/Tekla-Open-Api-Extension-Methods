@@ -81,6 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\ArrayListExtensions.cs" />
     <Compile Include="Collections\IEnumeratorExtensions.cs" />
     <Compile Include="Drawing\ContainerViewExtensions.cs" />
     <Compile Include="Drawing\DrawingExtensions.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Drawing\ViewExtensions.cs" />
     <Compile Include="Geometry3d\CoordinateSystemExtensions.cs" />
     <Compile Include="Geometry3d\Intersection2.cs" />
+    <Compile Include="Geometry3d\LineSegmentExtensions.cs" />
     <Compile Include="Geometry3d\MatrixExtensions.cs" />
     <Compile Include="Geometry3d\PointExtension.cs" />
     <Compile Include="Geometry3d\VectorExtensions.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Model\ModelObjectEnumeratorExtensions.cs" />
     <Compile Include="Model\ModelObjectExtensions.cs" />
     <Compile Include="Model\ModelObjectSelectorExtensions.cs" />
+    <Compile Include="Model\PartExtensions.cs" />
     <Compile Include="Model\UI\ModelObjectSelectorExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

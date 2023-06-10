@@ -27,7 +27,7 @@ using Tekla.Structures.Filtering;
 using Tekla.Structures.Geometry3d;
 using Tekla.Structures.Model;
 
-namespace TeklaOpenAPIExtension.Model
+namespace TeklaOpenAPIExtension
 {
 	public static class ModelObjectSelectorExtensions
 	{

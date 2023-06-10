@@ -29,6 +29,7 @@ With NOT_TSD symbol the code bellow will not be included in your project
 */
 
 using System;
+using Tekla.Structures.Geometry3d;
 using ts = Tekla.Structures;
 using tsm = Tekla.Structures.Model;
 
@@ -67,6 +68,20 @@ namespace TeklaOpenAPIExtension
         {
 	        modelObject = model.Select<TModelObject>(guid);
 	        return modelObject != null;
+        }
+
+        /// <summary>
+        /// Calculates global vector Z in current transformation plane (current local coordinate)
+        /// </summary>
+        public static Vector GetCurrentGlobalVectorZ(this tsm.Model model)
+        {
+            var p0 = new Point();
+            var p2 = new Point(0, 0, 1000);
+
+            var matrixToLocal = model.GetWorkPlaneHandler().GetCurrentTransformationPlane().TransformationMatrixToLocal;
+            var p0_local = matrixToLocal.Transform(p0);
+            var p2_local = matrixToLocal.Transform(p2);
+            return new Vector(p2_local - p0_local).GetNormal();
         }
 	}
 }
