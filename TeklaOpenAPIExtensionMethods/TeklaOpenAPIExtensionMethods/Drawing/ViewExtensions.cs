@@ -49,6 +49,10 @@ namespace TeklaOpenAPIExtension
 			return view.GetModelObjects().ToReadOnlyCollection<TDrawingObject>();
 		}
 
+
+        //TODO GetModelObjects(identifier) is not present in older Tekla Api versions like 2017 
+        /*
+		 
 		/// <summary>
 		/// Gets the drawing model objects of type <typeparamref name="TDrawingObject"/> based on given model object identifier. If used from sheet model objects from all views are returned.
 		/// </summary>
@@ -60,7 +64,10 @@ namespace TeklaOpenAPIExtension
 		{
 			return view.GetModelObjects(identifier).ToReadOnlyCollection<TDrawingObject>();
 		}
-	}
+
+		*/
+
+    }
 }
 
 #endif
