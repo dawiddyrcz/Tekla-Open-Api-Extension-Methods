@@ -34,7 +34,7 @@ using System.Collections.Generic;
 using Tekla.Structures;
 using Tekla.Structures.Drawing;
 
-namespace TeklaOpenAPIExtension.Drawing
+namespace TeklaOpenAPIExtension
 {
 	public static class ViewExtensions
 	{

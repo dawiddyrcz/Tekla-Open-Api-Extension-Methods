@@ -33,7 +33,7 @@ With NOT_TSD symbol the code bellow will not be included in your project
 using System.Collections.Generic;
 using Tekla.Structures.Drawing;
 
-namespace TeklaOpenAPIExtension.Drawing
+namespace TeklaOpenAPIExtension
 {
 	public static class ContainerViewExtensions
 	{

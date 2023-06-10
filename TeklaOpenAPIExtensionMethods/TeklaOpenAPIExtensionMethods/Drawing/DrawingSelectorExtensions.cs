@@ -33,7 +33,7 @@ using Tekla.Structures.Drawing.UI;
 
 #if !NOT_TSD
 
-namespace TeklaOpenAPIExtension.Drawing
+namespace TeklaOpenAPIExtension
 {
 	public static class DrawingSelectorExtensions
 	{

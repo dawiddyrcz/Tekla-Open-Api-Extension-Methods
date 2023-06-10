@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
-  <metadata>
-    <id>TeklaOpenApiExtensionMethods</id>
-    <version>3.0.0</version>
-    <title>TeklaOpenApiExtensionMethods</title>
-    <authors>Dawid Dyrcz</authors>
-    <owners>Dawid Dyrcz</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <license type="expression">MIT</license>
-    <projectUrl>https://github.com/dawiddyrcz/Tekla-Open-Api-Extension-Methods</projectUrl>
-    <icon>images\icon.png</icon>
-    <description>This package contains extension methods to the Tekla Structures Open Api assemblies i.e methods ModelObjectEnumerator.ToList()</description>
-    <releaseNotes>Added preprocessor directive which allow to not include Tekla.Structures.Drawing.dll reference</releaseNotes>
-    <copyright>Copyright Dawid Dyrcz 2020</copyright>
-    <tags>Tekla Structures Open Api Extension Methods</tags>
-	<dependencies>
-      <group targetFramework="net40" />
-</dependencies>
-  </metadata>
-  
-  <files>
-    <file src="images\icon.png" target="images\" />
-    <file src="Model\*.cs" target="content/TeklaApiExtensions/Model" />
-    <file src="Drawing\*.cs" target="content/TeklaApiExtensions/Drawing" />
-    <file src="Geometry3d\*.cs" target="content/TeklaApiExtensions/Geometry3d" />
-    <file src="Readme.md" target="content/TeklaApiExtensions" />
-  </files>
+	<metadata>
+		<id>TeklaOpenApiExtensionMethods</id>
+		<version>4.0.0</version>
+		<title>TeklaOpenApiExtensionMethods</title>
+		<authors>Dawid Dyrcz</authors>
+		<owners>Dawid Dyrcz</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<projectUrl>https://github.com/dawiddyrcz/Tekla-Open-Api-Extension-Methods</projectUrl>
+		<icon>images\icon.png</icon>
+		<description>This package contains extension methods to the Tekla Structures Open Api assemblies i.e methods ModelObjectEnumerator.ToList(). This package contains pure source codes which are added to your project.</description>
+		<releaseNotes>Added preprocessor directive which allow to not include Tekla.Structures.Drawing.dll reference</releaseNotes>
+		<copyright>Copyright Dawid Dyrcz 2020</copyright>
+		<tags>Tekla Structures Open Api Extension Methods</tags>
+		<dependencies>
+			<group targetFramework="net40" />
+		</dependencies>
+	</metadata>
+
+	<files>
+		<file src="images\icon.png" target="images\" />
+		<file src="Collections\*.cs" target="content/TeklaApiExtensions/Collections" />
+		<file src="Drawing\*.cs" target="content/TeklaApiExtensions/Drawing" />
+		<file src="Geometry3d\*.cs" target="content/TeklaApiExtensions/Geometry3d" />
+		<file src="Model\*.cs" target="content/TeklaApiExtensions/Model" />
+		<file src="Model\UI\*.cs" target="content/TeklaApiExtensions/Model\UI" />
+		<file src="Readme.md" target="content/TeklaApiExtensions" />
+	</files>
 </package>
