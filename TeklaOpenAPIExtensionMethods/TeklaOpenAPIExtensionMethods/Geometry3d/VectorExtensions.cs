@@ -62,5 +62,13 @@ namespace TeklaOpenAPIExtension
             output.Z -= vectorToSubtract.Z;
             return output;
         }
+
+        public static double GetSignedAngle(Vector v1, Vector v2, Vector referenceVector)
+        {
+            var angle = v1.GetAngleBetween(v2);
+            if (v1.Cross(v2).Dot(referenceVector) < 0)
+                angle = -1.0 * angle;
+            return angle;
+        }
     }
 }

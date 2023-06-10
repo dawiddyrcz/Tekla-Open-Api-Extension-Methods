@@ -30,13 +30,21 @@ With NOT_TSD symbol the code bellow will not be included in your project
 
 #if !NOT_TSD
 
+using System.Collections;
 using System.Collections.Generic;
 using Tekla.Structures.Drawing;
+using TeklaOpenAPIExtension.Collections;
 
 namespace TeklaOpenAPIExtension
 {
     public static class DrawingObjectEnumeratorExtension
     {
+	    /// <inheritdoc cref="Collections.IEnumeratorExtensions.ToReadOnlyCollection{TDrawing}"/>
+		public static IReadOnlyCollection<TDrawingObject> ToReadOnlyCollection<TDrawingObject>(this DrawingObjectEnumerator enumerator) where TDrawingObject : DrawingObject
+        {
+            return ((IEnumerator)enumerator).ToReadOnlyCollection<TDrawingObject>();
+        }
+
         /// <summary>Adds items from the enumerator to the System.Collections.Generic.List</summary>
         public static List<DrawingObject> ToList(this DrawingObjectEnumerator enumerator)
         {

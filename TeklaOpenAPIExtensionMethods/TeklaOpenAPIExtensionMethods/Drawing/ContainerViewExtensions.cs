@@ -30,47 +30,35 @@ With NOT_TSD symbol the code bellow will not be included in your project
 
 #if !NOT_TSD
 
-using System.Collections;
 using System.Collections.Generic;
 using Tekla.Structures.Drawing;
-using TeklaOpenAPIExtension.Collections;
 
 namespace TeklaOpenAPIExtension
 {
-    public static class DrawingEnumeratorExtension
-    {
-		/// <inheritdoc cref="Collections.IEnumeratorExtensions.ToReadOnlyCollection{TDrawing}"/>
-		public static IReadOnlyCollection<TDrawing> ToReadOnlyCollection<TDrawing>(this DrawingEnumerator enumerator) where TDrawing : Tekla.Structures.Drawing.Drawing
-        {
-	        return ((IEnumerator)enumerator).ToReadOnlyCollection<TDrawing>();
-        }
+	public static class ContainerViewExtensions
+	{
+		/// <summary>
+		/// Gets all views of type <typeparamref name="TView"/> that are placed on <paramref name="containerView"/>.
+		/// </summary>
+		/// <typeparam name="TView">Type of returned views.</typeparam>
+		/// <param name="containerView">Container view which holds other views.</param>
+		/// <returns>All views placed on <paramref name="containerView"/> of type <typeparamref name="TView"/>.</returns>
+		public static IReadOnlyCollection<TView> GetViews<TView>(this ContainerView containerView) where TView : ViewBase
+		{
+			return containerView.GetViews().ToReadOnlyCollection<TView>();
+		}
 
-		/// <summary>Add items from the enumerator to the System.Collections.Generic.List</summary>
-		public static List<Tekla.Structures.Drawing.Drawing> ToList(this DrawingEnumerator enumerator)
-        {
-            var output = new List<Tekla.Structures.Drawing.Drawing>(enumerator.GetSize());
-
-            while (enumerator.MoveNext())
-            {
-                output.Add(enumerator.Current);
-            }
-
-            return output;
-        }
-
-        /// <summary>Add items from the enumerator to the System.Collections.Generic.List. if (enumerator.Current is T t) output.Add(t);</summary>
-        public static List<T> ToList<T>(this DrawingEnumerator enumerator) where T : Tekla.Structures.Drawing.Drawing
-        {
-            var output = new List<T>(enumerator.GetSize());
-
-            while (enumerator.MoveNext())
-            {
-                if (enumerator.Current is T t)
-                    output.Add(t);
-            }
-
-            return output;
-        }
-    }
+		/// <summary>
+		/// Gets all views of type <typeparamref name="TView"/> that are placed on <paramref name="containerView"/> and their children views.
+		/// </summary>
+		/// <typeparam name="TView">Type of returned views.</typeparam>
+		/// <param name="containerView">Container view which holds other views.</param>
+		/// <returns>All views and their children views placed on <paramref name="containerView"/> of type <typeparamref name="TView"/>.</returns>
+		public static IReadOnlyCollection<TView> GetAllViews<TView>(this ContainerView containerView) where TView : ViewBase
+		{
+			return containerView.GetAllViews().ToReadOnlyCollection<TView>();
+		}
+	}
 }
+
 #endif

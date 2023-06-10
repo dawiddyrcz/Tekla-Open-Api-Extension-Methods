@@ -28,39 +28,26 @@ open properties of your project, goto Build > Conditional compilation symbols an
 With NOT_TSD symbol the code bellow will not be included in your project
 */
 
-#if !NOT_TSD
-
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Tekla.Structures.Drawing;
 using Tekla.Structures.Drawing.UI;
+
+#if !NOT_TSD
 
 namespace TeklaOpenAPIExtension
 {
-    public static class DrawingObjectSelectorExtensions
+	public static class DrawingSelectorExtensions
 	{
 		/// <summary>
-		/// Gets the selected objects in the drawing of type <typeparamref name="TDrawingObject"/>.
+		/// Gets the drawings that are currently selected in the drawing list dialog of type <typeparamref name="TDrawing"/>.
 		/// </summary>
-		/// <typeparam name="TDrawingObject">Type of returned drawing objects.</typeparam>
-		/// <param name="selector">Selector to find drawing objects.</param>
-		/// <returns>A <see cref="IReadOnlyCollection{TDrawingObject}"/> of the selected objects in the drawing.</returns>
-		public static IReadOnlyCollection<TDrawingObject> GetSelected<TDrawingObject>(this DrawingObjectSelector selector) where TDrawingObject : DrawingObject
-	    {
-		    return selector.GetSelected().ToReadOnlyCollection<TDrawingObject>();
-	    }
-
-        public static void SelectObjects(this DrawingObjectSelector selector, IEnumerable<DrawingObject> drawingObjects, bool extendSelection = false)
-        {
-            var arList = new ArrayList(drawingObjects.Count());
-
-            foreach (var drObject in drawingObjects)
-                arList.Add(drObject);
-
-            selector.SelectObjects(arList, extendSelection);
-        }
-    }
+		/// <typeparam name="TDrawing">Type of drawing to return.</typeparam>
+		/// <param name="selector">Selector to get all drawings from.</param>
+		/// <returns>The drawings that are currently selected in the drawing list dialog.</returns>
+		public static IReadOnlyCollection<TDrawing> GetSelected<TDrawing>(this DrawingSelector selector) where TDrawing : Tekla.Structures.Drawing.Drawing
+		{
+			return selector.GetSelected().ToReadOnlyCollection<TDrawing>();
+		}
+	}
 }
 
 #endif
