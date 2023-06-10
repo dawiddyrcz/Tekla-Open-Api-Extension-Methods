@@ -83,6 +83,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Collections\IEnumeratorExtensions.cs">
+      <Link>references\IEnumeratorExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\ContainerViewExtensions.cs">
+      <Link>references\ContainerViewExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingEnumeratorExtension.cs">
       <Link>references\DrawingEnumeratorExtension.cs</Link>
     </Compile>
@@ -98,8 +104,14 @@
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingObjectSelectorExtensions.cs">
       <Link>references\DrawingObjectSelectorExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\DrawingSelectorExtensions.cs">
+      <Link>references\DrawingSelectorExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\ViewBaseExtension.cs">
       <Link>references\ViewBaseExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Drawing\ViewExtensions.cs">
+      <Link>references\ViewExtensions.cs</Link>
     </Compile>
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Geometry3d\CoordinateSystemExtensions.cs">
       <Link>references\CoordinateSystemExtensions.cs</Link>
@@ -125,6 +137,12 @@
     <Compile Include="..\TeklaOpenAPIExtensionMethods\Model\ModelObjectExtensions.cs">
       <Link>references\ModelObjectExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Model\ModelObjectSelectorExtensions.cs">
+      <Link>references\ModelObjectSelectorExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\TeklaOpenAPIExtensionMethods\Model\UI\ModelObjectSelectorExtensions.cs">
+      <Link>references\Model\UI\ModelObjectSelectorExtensions.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,6 +150,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -30,17 +30,25 @@ With NOT_TSD symbol the code bellow will not be included in your project
 
 #if !NOT_TSD
 
+using System.Collections;
 using System.Collections.Generic;
 using Tekla.Structures.Drawing;
+using TeklaOpenAPIExtension.Collections;
 
 namespace TeklaOpenAPIExtension
 {
     public static class DrawingEnumeratorExtension
     {
-        /// <summary>Add items from the enumerator to the System.Collections.Generic.List</summary>
-        public static List<Drawing> ToList(this DrawingEnumerator enumerator)
+		/// <inheritdoc cref="Collections.IEnumeratorExtensions.ToReadOnlyCollection{TDrawing}"/>
+		public static IReadOnlyCollection<TDrawing> ToReadOnlyCollection<TDrawing>(this DrawingEnumerator enumerator) where TDrawing : Tekla.Structures.Drawing.Drawing
         {
-            var output = new List<Drawing>(enumerator.GetSize());
+	        return ((IEnumerator)enumerator).ToReadOnlyCollection<TDrawing>();
+        }
+
+		/// <summary>Add items from the enumerator to the System.Collections.Generic.List</summary>
+		public static List<Tekla.Structures.Drawing.Drawing> ToList(this DrawingEnumerator enumerator)
+        {
+            var output = new List<Tekla.Structures.Drawing.Drawing>(enumerator.GetSize());
 
             while (enumerator.MoveNext())
             {
@@ -51,7 +59,7 @@ namespace TeklaOpenAPIExtension
         }
 
         /// <summary>Add items from the enumerator to the System.Collections.Generic.List. if (enumerator.Current is T t) output.Add(t);</summary>
-        public static List<T> ToList<T>(this DrawingEnumerator enumerator) where T : Drawing
+        public static List<T> ToList<T>(this DrawingEnumerator enumerator) where T : Tekla.Structures.Drawing.Drawing
         {
             var output = new List<T>(enumerator.GetSize());
 

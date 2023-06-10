@@ -1,7 +1,7 @@
 ﻿/*
 MIT License
 
-Copyright (c) 2022 Dawid Dyrcz
+Copyright (c) 2020 Dawid Dyrcz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -30,37 +30,35 @@ With NOT_TSD symbol the code bellow will not be included in your project
 
 #if !NOT_TSD
 
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Tekla.Structures.Drawing;
-using Tekla.Structures.Drawing.UI;
 
-namespace TeklaOpenAPIExtension
+namespace TeklaOpenAPIExtension.Drawing
 {
-    public static class DrawingObjectSelectorExtensions
+	public static class ContainerViewExtensions
 	{
 		/// <summary>
-		/// Gets the selected objects in the drawing of type <typeparamref name="TDrawingObject"/>.
+		/// Gets all views of type <typeparamref name="TView"/> that are placed on <paramref name="containerView"/>.
 		/// </summary>
-		/// <typeparam name="TDrawingObject">Type of returned drawing objects.</typeparam>
-		/// <param name="selector">Selector to find drawing objects.</param>
-		/// <returns>A <see cref="IReadOnlyCollection{TDrawingObject}"/> of the selected objects in the drawing.</returns>
-		public static IReadOnlyCollection<TDrawingObject> GetSelected<TDrawingObject>(this DrawingObjectSelector selector) where TDrawingObject : DrawingObject
-	    {
-		    return selector.GetSelected().ToReadOnlyCollection<TDrawingObject>();
-	    }
+		/// <typeparam name="TView">Type of returned views.</typeparam>
+		/// <param name="containerView">Container view which holds other views.</param>
+		/// <returns>All views placed on <paramref name="containerView"/> of type <typeparamref name="TView"/>.</returns>
+		public static IReadOnlyCollection<TView> GetViews<TView>(this ContainerView containerView) where TView : ViewBase
+		{
+			return containerView.GetViews().ToReadOnlyCollection<TView>();
+		}
 
-        public static void SelectObjects(this DrawingObjectSelector selector, IEnumerable<DrawingObject> drawingObjects, bool extendSelection = false)
-        {
-            var arList = new ArrayList(drawingObjects.Count());
-
-            foreach (var drObject in drawingObjects)
-                arList.Add(drObject);
-
-            selector.SelectObjects(arList, extendSelection);
-        }
-    }
+		/// <summary>
+		/// Gets all views of type <typeparamref name="TView"/> that are placed on <paramref name="containerView"/> and their children views.
+		/// </summary>
+		/// <typeparam name="TView">Type of returned views.</typeparam>
+		/// <param name="containerView">Container view which holds other views.</param>
+		/// <returns>All views and their children views placed on <paramref name="containerView"/> of type <typeparamref name="TView"/>.</returns>
+		public static IReadOnlyCollection<TView> GetAllViews<TView>(this ContainerView containerView) where TView : ViewBase
+		{
+			return containerView.GetAllViews().ToReadOnlyCollection<TView>();
+		}
+	}
 }
 
 #endif

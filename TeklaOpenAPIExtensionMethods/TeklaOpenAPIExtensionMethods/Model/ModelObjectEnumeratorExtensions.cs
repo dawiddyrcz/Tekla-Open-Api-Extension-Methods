@@ -22,13 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Tekla.Structures.Model;
+using TeklaOpenAPIExtension.Collections;
 
 namespace TeklaOpenAPIExtension
 {
     public static class ModelObjectEnumeratorExtensions
     {
+	    /// <inheritdoc cref="Collections.IEnumeratorExtensions.ToReadOnlyCollection{TDrawing}"/>
+		public static IReadOnlyCollection<TModelObject> ToReadOnlyCollection<TModelObject>(this ModelObjectEnumerator enumerator) where TModelObject : Tekla.Structures.Model.ModelObject
+        {
+            return ((IEnumerator)enumerator).ToReadOnlyCollection<TModelObject>();
+        }
+
         public static List<ModelObject> ToList(this ModelObjectEnumerator enumerator, bool selectInstances = false)
         {
             enumerator.SelectInstances = selectInstances;
@@ -83,7 +91,7 @@ namespace TeklaOpenAPIExtension
                 if (modelObject is T t)
                 {
                     if (!output.ContainsKey(modelObject.Identifier.GUID))
-                        output.Add(modelObject.Identifier.GUID, t); 
+                        output.Add(modelObject.Identifier.GUID, t);
                 }
             }
             return output;
@@ -116,7 +124,7 @@ namespace TeklaOpenAPIExtension
                 if (modelObject is T t)
                 {
                     if (!output.ContainsKey(modelObject.Identifier.ID))
-                        output.Add(modelObject.Identifier.ID, t); 
+                        output.Add(modelObject.Identifier.ID, t);
                 }
             }
             return output;
